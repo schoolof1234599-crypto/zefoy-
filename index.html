@@ -26,78 +26,135 @@ body{
   margin:auto;
   padding:14px;
 }
+
+/* 🔥 BIG LOGO */
 .logo{
   display:block;
-  margin:10px auto 6px;
-  width:90px;height:90px;border-radius:50%;
+  margin:15px auto 10px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  box-shadow:0 0 25px #38bdf8;
 }
+
+/* NOTICE */
 .notice{
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:12px;
-  padding:12px;
+  border-radius:14px;
+  padding:14px;
   text-align:center;
-  margin:10px 0;
+  margin:12px 0;
 }
+
+/* BIG ZEOFY LINK */
 .big-link{
   display:inline-block;
-  margin-top:8px;
-  padding:10px 14px;
+  margin-top:10px;
+  padding:12px 18px;
   border:2px solid var(--blue);
-  border-radius:12px;
-  font-size:26px;
+  border-radius:14px;
+  font-size:28px;
   font-weight:900;
-  letter-spacing:1px;
+  letter-spacing:2px;
   color:var(--blue);
   text-decoration:none;
 }
+
+/* OPERATOR NAME */
 .operator{
   text-align:center;
   font-weight:900;
-  letter-spacing:2px;
-  margin:8px 0 12px;
+  letter-spacing:3px;
+  margin:10px 0 16px;
 }
+
+/* NAV */
 .nav{
   text-align:center;
   margin-bottom:10px;
 }
 .nav button{
-  background:#334155;color:#fff;border:none;
-  padding:8px 12px;border-radius:8px;margin:0 4px;
+  background:#334155;
+  color:#fff;
+  border:none;
+  padding:9px 14px;
+  border-radius:10px;
+  margin:0 4px;
 }
+
+/* CARD */
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:12px;
-  padding:14px;
+  border-radius:14px;
+  padding:16px;
   margin:12px 0;
 }
-h3{margin:0 0 8px;text-align:center}
+h3{margin:0 0 10px;text-align:center}
+
 input{
-  width:100%;padding:10px;border:none;border-radius:8px;
-  background:#0f172a;color:#fff;margin:8px 0;
+  width:100%;
+  padding:11px;
+  border:none;
+  border-radius:10px;
+  background:#0f172a;
+  color:#fff;
+  margin:8px 0;
 }
+
 button.action{
-  width:100%;padding:10px;border:none;border-radius:8px;
-  background:var(--btn);color:#fff;font-size:14px;
+  width:100%;
+  padding:11px;
+  border:none;
+  border-radius:10px;
+  background:var(--btn);
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
 }
 button.action:disabled{background:#334155}
+
 .timer{
-  text-align:center;font-size:12px;color:var(--muted);margin-top:6px;
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:6px;
 }
+
+/* PRICE */
 .price{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:10px;border:1px dashed var(--border);border-radius:10px;
-  margin:8px 0;font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  border:1px dashed var(--border);
+  border-radius:10px;
+  margin:8px 0;
+  font-size:14px;
 }
+
+/* FOOTER */
 .footer{
-  text-align:center;font-size:12px;color:#64748b;margin:12px 0;
+  text-align:center;
+  font-size:12px;
+  color:#64748b;
+  margin:14px 0;
 }
+
+/* WHATSAPP */
 .whatsapp{
-  position:fixed;left:15px;bottom:15px;
-  background:#25D366;color:#fff;text-decoration:none;
-  padding:12px 16px;border-radius:999px;font-weight:700;
+  position:fixed;
+  left:15px;
+  bottom:15px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:800;
 }
+
+/* HIDE */
 .hidden{display:none}
 </style>
 </head>
@@ -108,7 +165,7 @@ button.action:disabled{background:#334155}
   <!-- LOGO -->
   <img src="logo.png" class="logo" alt="Logo">
 
-  <!-- TOP NOTICE + BIG ZEOFY LINK -->
+  <!-- NOTICE + BIG ZEOFY LINK -->
   <div class="notice">
     <div><b>OUR FREE WEBSITE</b></div>
     <a class="big-link" href="https://zefoy.com" target="_blank">ZEOFY.COM</a>
@@ -119,7 +176,7 @@ button.action:disabled{background:#334155}
 
   <!-- OPERATOR -->
   <div class="operator">
-    A L I &nbsp; S E N I O R &nbsp; O P R E T E R
+    A L I &nbsp; S E N I O R &nbsp; O P E R A T O R
   </div>
 
   <!-- NAV -->
@@ -157,12 +214,9 @@ button.action:disabled{background:#334155}
   <div id="prices" class="hidden">
     <div class="card">
       <h3>Price List</h3>
-      <div class="price"><span>❤️ 1K Likes</span><b>FREE (Demo)</b></div>
-      <div class="price"><span>👁️ 5K Views</span><b>FREE (Demo)</b></div>
-      <div class="price"><span>➕ 100 Followers</span><b>FREE (Demo)</b></div>
-      <div style="font-size:12px;color:var(--muted);text-align:center">
-        Manual / external real services only
-      </div>
+      <div class="price"><span>❤️ 1K Likes</span><b>FREE</b></div>
+      <div class="price"><span>👁️ 5K Views</span><b>FREE</b></div>
+      <div class="price"><span>➕ 100 Followers</span><b>FREE</b></div>
     </div>
   </div>
 
@@ -171,7 +225,7 @@ button.action:disabled{background:#334155}
     <div class="card">
       <h3>About</h3>
       <p style="font-size:14px">
-        This is a <b>free demo portal</b> for UI & educational purpose.
+        This is a <b>free demo portal</b> for educational & UI purpose.
         No real automation or bots are used.
       </p>
       <p style="font-size:14px">
@@ -184,7 +238,7 @@ button.action:disabled{background:#334155}
   <div class="footer">Demo / Educational purpose only</div>
 </div>
 
-<!-- WHATSAPP -->
+<!-- WHATSAPP BUTTON -->
 <a class="whatsapp" href="https://wa.me/923180957645" target="_blank">WhatsApp</a>
 
 <script>
@@ -216,4 +270,4 @@ function show(id){
 }
 </script>
 </body>
-  </html>
+        </html>
