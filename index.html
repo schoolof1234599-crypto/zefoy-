@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<title>Free TikTok Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#0b1220;
+  color:#e5e7eb;
+  font-family:Arial, sans-serif;
+}
+.hidden{display:none}
+.center{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.box{
+  background:#020617;
+  border:1px solid #1f2937;
+  border-radius:12px;
+  padding:20px;
+  width:90%;
+  max-width:420px;
+}
+h2,h3{text-align:center;margin-top:0}
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:none;
+  border-radius:6px;
+  background:#0f172a;
+  color:white;
+}
+button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  background:#2563eb;
+  color:white;
+  font-size:14px;
+}
+button:disabled{background:#334155}
+.card{
+  background:#020617;
+  border:1px solid #1f2937;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:15px;
+}
+.timer{
+  font-size:12px;
+  color:#94a3b8;
+  margin-top:5px;
+  text-align:center;
+}
+.notice{
+  background:#020617;
+  border:1px solid #1f2937;
+  border-radius:10px;
+  padding:12px;
+  font-size:13px;
+  margin-bottom:15px;
+  text-align:center;
+}
+.operator{
+  text-align:center;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:6px;
+}
+.operator span{font-weight:900}
+.lang-btn{
+  background:#334155;
+  margin-bottom:10px;
+}
+.whatsapp{
+  position:fixed;
+  bottom:15px;
+  left:15px;
+  background:#25D366;
+  color:white;
+  padding:12px 15px;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:14px;
+}
+a{color:#38bdf8;text-decoration:none}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div class="center" id="passwordScreen">
+  <div class="box">
+    <h2>🔒 پاس ورڈ درج کریں</h2>
+    <input type="password" id="pass" placeholder="پاس ورڈ">
+    <button onclick="checkPass()">لاگ ان</button>
+  </div>
+</div>
+
+<!-- CAPTCHA SCREEN -->
+<div class="center hidden" id="captchaScreen">
+  <div class="box">
+    <h2>🤖 تصدیق</h2>
+    <p style="text-align:center">میں روبوٹ نہیں ہوں پر کلک کریں</p>
+    <button onclick="verifyCaptcha()">✔ میں روبوٹ نہیں ہوں</button>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div class="hidden" id="mainApp">
+  <div class="box">
+
+    <!-- LANGUAGE TOGGLE -->
+    <button class="lang-btn" onclick="toggleLang()">English / اردو</button>
+
+    <!-- TOP NOTICE -->
+    <div class="notice">
+      ⚠️ Services may be slow. Please wait for cooldown timer.
+    </div>
+
+    <!-- OPERATOR NAME -->
+    <div class="operator">
+      <span>A</span><span>L</span><span>I</span>
+      <span>S</span><span>E</span><span>N</span><span>I</span><span>O</span><span>R</span>
+      <span>O</span><span>P</span><span>R</span><span>E</span><span>T</span><span>E</span><span>R</span>
+    </div>
+
+    <!-- FREE SERVICE LINE -->
+    <p style="text-align:center;font-size:12px">
+      ہماری فری سروس —
+      <a href="https://zefoy.com" target="_blank">zefoy.com</a>
+    </p>
+
+    <!-- SERVICES -->
+    <div class="card">
+      <h3 class="ur">❤️ ٹک ٹاک لائکس</h3>
+      <h3 class="en hidden">❤️ TikTok Likes</h3>
+      <input type="text" placeholder="TikTok link">
+      <button onclick="start(this)">Start</button>
+      <div class="timer"></div>
+    </div>
+
+    <div class="card">
+      <h3 class="ur">👁️ ٹک ٹاک ویوز</h3>
+      <h3 class="en hidden">👁️ TikTok Views</h3>
+      <input type="text" placeholder="TikTok link">
+      <button onclick="start(this)">Start</button>
+      <div class="timer"></div>
+    </div>
+
+    <div class="card">
+      <h3 class="ur">➕ ٹک ٹاک فالورز</h3>
+      <h3 class="en hidden">➕ TikTok Followers</h3>
+      <input type="text" placeholder="TikTok profile link">
+      <button onclick="start(this)">Start</button>
+      <div class="timer"></div>
+    </div>
+
+    <p style="text-align:center;font-size:12px;color:#64748b">
+      Demo / Educational purpose only
+    </p>
+
+  </div>
+</div>
+
+<!-- WHATSAPP ADMIN (CHANGE NUMBER HERE) -->
+<a class="whatsapp"
+   href="https://wa.me/92XXXXXXXXXX"
+   target="_blank">WhatsApp Admin</a>
+
+<script>
+/* SETTINGS */
+const PASSWORD = "ali1";
+const TIMER_SECONDS = 30;
+
+/* PASSWORD */
+function checkPass(){
+  if(document.getElementById("pass").value === PASSWORD){
+    passwordScreen.classList.add("hidden");
+    captchaScreen.classList.remove("hidden");
+  }else{
+    alert("غلط پاس ورڈ");
+  }
+}
+
+/* CAPTCHA */
+function verifyCaptcha(){
+  captchaScreen.classList.add("hidden");
+  mainApp.classList.remove("hidden");
+}
+
+/* TIMER */
+function start(btn){
+  let box = btn.parentElement;
+  let timer = box.querySelector(".timer");
+  let t = TIMER_SECONDS;
+  btn.disabled = true;
+  timer.innerText = "Please wait " + t + " seconds";
+  let i = setInterval(()=>{
+    t--;
+    timer.innerText = "Please wait " + t + " seconds";
+    if(t <= 0){
+      clearInterval(i);
+      btn.disabled = false;
+      timer.innerText = "Service ready again";
+      alert("Demo completed");
+    }
+  },1000);
+}
+
+/* LANGUAGE TOGGLE */
+function toggleLang(){
+  document.querySelectorAll(".ur").forEach(e=>e.classList.toggle("hidden"));
+  document.querySelectorAll(".en").forEach(e=>e.classList.toggle("hidden"));
+}
+</script>
+
+</body>
+</html>
